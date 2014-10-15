@@ -9,6 +9,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 PROMPT='$FG[237]------------------------------------------------------------%{$reset_color%}
 $FG[032]%~\
 $(git_prompt_info) \
+$my_orange`rvm_prompt_info || rbenv_prompt_info`\
 $FG[105]%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
@@ -21,9 +22,9 @@ eval my_orange='$FG[214]'
 # right prompt
 if type "virtualenv_prompt_info" > /dev/null
 then
-	RPROMPT='$(virtualenv_prompt_info)$my_gray%n@%m%{$reset_color%}%'
+	RPROMPT='$(virtualenv_prompt_info)$my_orange%n@%m%{$reset_color%}%'
 else
-	RPROMPT='$my_gray%n@%m%{$reset_color%}%'
+	RPROMPT='$my_orange%n@%m%{$reset_color%}%'
 fi
 
 # git settings
